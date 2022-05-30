@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'  # disable saving logs
+    ports:
+      - 1025:1025 # smtp server
+      - 9090:8025 # web ui
+
+
+networks:
+  mynetwork:
+    driver: bridge
